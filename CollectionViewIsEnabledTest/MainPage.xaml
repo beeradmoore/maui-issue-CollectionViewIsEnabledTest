@@ -5,8 +5,13 @@
              xmlns:local="clr-namespace:CollectionViewIsEnabledTest"
              x:DataType="local:MainPage">
 
-    <Grid ColumnDefinitions="*,*" RowDefinitions="*,*">
-        <CollectionView Grid.Column="0" ItemsSource="{Binding Items}" SelectionMode="Single" IsEnabled="False">
+    <Grid ColumnDefinitions="Auto,*,*" RowDefinitions="Auto,*,*" RowSpacing="8" ColumnSpacing="8">
+        <Label Grid.Row="1" Grid.Column="0" Text="CollectionView" FontAttributes="Bold" />        
+        <Label Grid.Row="2" Grid.Column="0" Text="ListView" FontAttributes="Bold" />
+        <Label Grid.Row="0" Grid.Column="1" Text="IsEnabled=true" FontAttributes="Bold" />
+        <Label Grid.Row="0" Grid.Column="2" Text="IsEnabled=false" FontAttributes="Bold" />
+        
+        <CollectionView Grid.Row="1" Grid.Column="1" ItemsSource="{Binding Items}" SelectionMode="Single" IsEnabled="true">
               <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <Grid Padding="10">                    
@@ -16,7 +21,7 @@
             </CollectionView.ItemTemplate>
         </CollectionView>
 
-         <CollectionView Grid.Column="1" ItemsSource="{Binding Items}" SelectionMode="Single" IsEnabled="true">
+        <CollectionView Grid.Row="1" Grid.Column="2" ItemsSource="{Binding Items}" SelectionMode="Single" IsEnabled="False">
               <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <Grid Padding="10">                    
@@ -25,8 +30,20 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
+        
+         <ListView Grid.Row="2" Grid.Column="1" ItemsSource="{Binding Items}" SelectionMode="Single" IsEnabled="true">
+              <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="10">
+                            <Label Text="{Binding .}" TextColor="Black" />
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
 
-        <ListView Grid.Row="1" Grid.Column="0" ItemsSource="{Binding Items}" SelectionMode="Single" IsEnabled="False">
+        <ListView Grid.Row="2" Grid.Column="2" ItemsSource="{Binding Items}" SelectionMode="Single" IsEnabled="False">
               <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -38,17 +55,6 @@
             </ListView.ItemTemplate>
         </ListView>
 
-         <ListView Grid.Row="1" Grid.Column="1" ItemsSource="{Binding Items}" SelectionMode="Single" IsEnabled="true">
-              <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <Grid Padding="10">
-                            <Label Text="{Binding .}" TextColor="Black" />
-                        </Grid>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
     </Grid>
 </ContentPage>
 
