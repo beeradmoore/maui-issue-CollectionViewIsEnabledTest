@@ -5,15 +5,46 @@
              xmlns:local="clr-namespace:CollectionViewIsEnabledTest"
              x:DataType="local:MainPage">
 
-    <CollectionView ItemsSource="{Binding Items}" SelectionMode="Single" IsEnabled="False">
-          <CollectionView.ItemTemplate>
-            <DataTemplate>
-                <Grid Padding="10">                    
-                    <Label Text="{Binding .}" TextColor="Black" />
-                </Grid>
-            </DataTemplate>
-        </CollectionView.ItemTemplate>
-    </CollectionView>
+    <Grid ColumnDefinitions="*,*" RowDefinitions="*,*">
+        <CollectionView Grid.Column="0" ItemsSource="{Binding Items}" SelectionMode="Single" IsEnabled="False">
+              <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="10">                    
+                        <Label Text="{Binding .}" TextColor="Black" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
 
+         <CollectionView Grid.Column="1" ItemsSource="{Binding Items}" SelectionMode="Single" IsEnabled="true">
+              <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="10">                    
+                        <Label Text="{Binding .}" TextColor="Black" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <ListView Grid.Row="1" Grid.Column="0" ItemsSource="{Binding Items}" SelectionMode="Single" IsEnabled="False">
+              <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="10">                    
+                        <Label Text="{Binding .}" TextColor="Black" />
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+         <ListView Grid.Row="1" Grid.Column="1" ItemsSource="{Binding Items}" SelectionMode="Single" IsEnabled="true">
+              <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="10">                    
+                        <Label Text="{Binding .}" TextColor="Black" />
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
 </ContentPage>
 
