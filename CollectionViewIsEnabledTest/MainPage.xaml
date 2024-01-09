@@ -29,9 +29,11 @@
         <ListView Grid.Row="1" Grid.Column="0" ItemsSource="{Binding Items}" SelectionMode="Single" IsEnabled="False">
               <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Grid Padding="10">                    
-                        <Label Text="{Binding .}" TextColor="Black" />
-                    </Grid>
+                    <ViewCell>
+                        <Grid Padding="10">                    
+                            <Label Text="{Binding .}" TextColor="Black" />
+                        </Grid>
+                    </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
@@ -39,9 +41,11 @@
          <ListView Grid.Row="1" Grid.Column="1" ItemsSource="{Binding Items}" SelectionMode="Single" IsEnabled="true">
               <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Grid Padding="10">                    
-                        <Label Text="{Binding .}" TextColor="Black" />
-                    </Grid>
+                    <ViewCell>
+                        <Grid Padding="10">
+                            <Label Text="{Binding .}" TextColor="Black" />
+                        </Grid>
+                    </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
